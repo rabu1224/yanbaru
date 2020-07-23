@@ -23,6 +23,16 @@ class PostsController < ApplicationController
 
   def edit
   end
+
+  def destroy
+   # ***** 以下を追加 *****
+   post = Post.find(params[:id])
+   post.destroy!
+   redirect_to post
+   # ***** 以上を追加 *****
+ end
+
+
   private
 
   def post_params
