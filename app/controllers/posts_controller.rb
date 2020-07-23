@@ -22,7 +22,18 @@ class PostsController < ApplicationController
 
 
   def edit
-  end
+      # ***** 以下を追加 *****
+      @post = Post.find(params[:id])
+      # ***** 以上を追加 *****
+    end
+
+    def update
+      # ***** 以下を追加 *****
+      post = Post.find(params[:id])
+      post.update!(post_params)
+      redirect_to post
+      # ***** 以上を追加 *****
+    end
 
   def destroy
    # ***** 以下を追加 *****
