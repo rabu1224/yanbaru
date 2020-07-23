@@ -3,6 +3,9 @@ class PostsController < ApplicationController
   end
 
   def show
+    # ***** 以下を追加 *****
+    @post = Post.find(params[:id])
+    # ***** 以上を追加 *****
   end
 
   def new
@@ -19,8 +22,8 @@ class PostsController < ApplicationController
   end
   private
 
-def post_params
-  params.require(:post).permit(:title, :content)
-end
+  def post_params
+    params.require(:post).permit(:title, :content)
+  end
 
 end
